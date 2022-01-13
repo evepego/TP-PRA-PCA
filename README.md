@@ -219,6 +219,7 @@ Ajouter du text au fichier index.html créer lors de l'installation du serveur a
 
 * q3) Il fournit le loadbalancing, c'est à dire qu'il équilibre les charges à haute disponibilité. Il met aussi en place un serveur proxy pour les applications TCP et HTTP qui répartissent les requêtes sur plusieurs serveurs.
 
-* Tableau :
-    * Perte du WEB1 : Tout le traffic passe par le WEB2
-    * Perte du HAPROXY1 : Tout le traffic passe par le HAPROXY2
+| Evenement                      | Evenement attendu | Evenement obtenu |
+| ------------------------------ | ----------------- | ---------------- |
+| Perte du premier noeud WEB     | Tout le traffic passe automatiquement par le WEB2  | Le traffic passe bien par WEB2 automatiquement |
+| Perte du premier noeud HAPROXY | Tout le traffic passe automatiquement par le HAPROXY2 | Le traffic passe bien par HAProxy2 automatiquement |
