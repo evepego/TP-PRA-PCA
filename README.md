@@ -210,3 +210,15 @@ Ajouter du text au fichier index.html créer lors de l'installation du serveur a
 * Vérifications :
 ![ok](ok.png)
 ![ok](ok2.png)
+
+## Réponses aux questions :
+
+* q1)  Oui car nous avons configuré les deux serveur web de la même manière et les haproxy en tant que Maître/Esclave pour que l'esclave prenne le relais quand le maître tombe.
+
+* q2) Keepalived définit les rôle des haproxy , ici, il définit le maître et l'esclave. Il fait le lien entre les deux, empêche qu'il se brise et vérifie que celui-ci est toujours actif.
+
+* q3) Il fournit le loadbalancing, c'est à dire qu'il équilibre les charges à haute disponibilité. Il met aussi en place un serveur proxy pour les applications TCP et HTTP qui répartissent les requêtes sur plusieurs serveurs.
+
+* Tableau :
+    * Perte du WEB1 : Tout le traffic passe par le WEB2
+    * Perte du HAPROXY1 : Tout le traffic passe par le HAPROXY2
