@@ -171,14 +171,42 @@ Ajouter du text au fichier index.html créer lors de l'installation du serveur a
 
 ## Vérifications
 ### Lorsque tout fonctionne :
-![]()
-![]()
-![]()
+* HAProxy1 Actif :
+![HAP1-keep](HAP1-keep.png)
+![HAP1-hap](HAP1-hap.png)
+* HAProxy2 Actif :
+![HAP2-keep](HAP2-keep.png)
+![HAP2-hap](HAP2-hap.png)
+* WEB1 Actif :
+![web1-verif](web1-verif.png)
+* WEB2 Actif :
+![web2-verif](web2-verif.png)
+* Vérifications :
+![ok](ok.png)
+![ok](ok2.png)
 ### Lorsque le serveur WEB1 tombe :
-![]()
-![]()
-![]()
-### Lorsque le HAProxy1 tombe :
-![]()
-![]()
-![]()
+* WEB1 Inactif :
+![WEB1 inactif](WEB1-in.png)
+* WEB2 Actif :
+![web2-verif](web2-verif.png)
+* HAProxy1 Actif :
+![HAP1-keep](HAP1-keep.png)
+![HAP1-hap](HAP1-hap.png)
+* HAProxy2 Actif :
+![HAP2-keep](HAP2-keep.png)
+![HAP2-hap](HAP2-hap.png)
+* Vérifications :
+![](web1-tombe.png)
+### Lorsque le HAProxy2 tombe :
+* HAProxy2 Inactif :
+![hap2-in](hap2-in.png)
+* HAProxy1 Actif :
+![HAP1-keep](HAP1-keep.png)
+![HAP1-hap](HAP1-hap.png)
+* WEB1 Actif :
+![web1-verif](web1-verif.png)
+* WEB2 Actif :
+![web2-verif](web2-verif.png)
+* Vérifications :
+![ok](ok.png)
+![ok](ok2.png)
