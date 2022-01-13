@@ -42,9 +42,9 @@ vrrp_instance VI_1 {
     }
 }
 ```
-Redémarrer le service avec `sudo systemctl restart keepalived.service`.
-Puis vérifier le status avec `sudo systemctl status keepalived.service`:
-![](Capture keepalived)
+Redémarrer le service avec `sudo systemctl restart keepalived.service`.  
+Puis vérifier le status avec `sudo systemctl status keepalived.service`.  
+![HAP1-keep.png](Capture keepalived)
 
 ### Configurer HAProxy
 Dans le fichier `/etc/haproxy/haproxy.cfg`:
@@ -74,9 +74,9 @@ backend app
     server  app1 10.0.0.21:80 check
     server  app2 10.0.0.22:80 check
 ```
-Redémarrer le service avec `sudo systemctl restart keepalived.service`.
-Puis vérifier le status avec `sudo systemctl status keepalived.service`:
-![]()
+Redémarrer le service avec `sudo systemctl restart keepalived.service`.  
+Puis vérifier le status avec `sudo systemctl status keepalived.service`.  
+![HAP1-hap.png]()
 
 
 ## HAProxy2 (Esclave)
@@ -111,9 +111,9 @@ vrrp_instance VI_1 {
     }
 }
 ```
-Redémarrer le service avec `sudo systemctl restart keepalived.service`.
-Puis vérifier le status avec `sudo systemctl status keepalived.service`:
-![](Capture keepalived)
+Redémarrer le service avec `sudo systemctl restart keepalived.service`.  
+Puis vérifier le status avec `sudo systemctl status keepalived.service`.  
+![HAP2-keep](Capture keepalived)
 ### Configurer HAProxy
 Dans le fichier `/etc/haproxy/haproxy.cfg`:
 ```bash
@@ -142,9 +142,9 @@ backend app
     server  app1 10.0.0.21:80 check
     server  app2 10.0.0.22:80 check
 ```
-Redémarrer le service avec `sudo systemctl restart haproxy.service`.
-Puis vérifier le status avec `sudo systemctl status haproxy.service`:
-![]()
+Redémarrer le service avec `sudo systemctl restart haproxy.service`.  
+Puis vérifier le status avec `sudo systemctl status haproxy.service`.  
+![HAP2-hap](HAP2)
 
 ## Serveur WEB 1
 Exécuter les commandes suivantes pour installer et démarrer le serveur :
@@ -154,7 +154,7 @@ systemctl start httpd
 systemctl enable httpd
 ```
 Vérifier le status du serveur web avec `sudo systemctl status httpd`.
-![]()
+![web1-verif.png](WEB1)
 Ajouter du text au fichier index.html créer lors de l'installation du serveur avec `echo "test web1" > /var/www/html/index.html`.
 
 
@@ -166,5 +166,19 @@ systemctl start httpd
 systemctl enable httpd
 ```
 Vérifier le status du serveur web avec `sudo systemctl status httpd`.
-![]()
+![web2-verif.png](WEB2)
 Ajouter du text au fichier index.html créer lors de l'installation du serveur avec `echo "test web2" > /var/www/html/index.html`.
+
+## Vérifications
+### Lorsque tout fonctionne :
+![]()
+![]()
+![]()
+### Lorsque le serveur WEB1 tombe :
+![]()
+![]()
+![]()
+### Lorsque le HAProxy1 tombe :
+![]()
+![]()
+![]()
