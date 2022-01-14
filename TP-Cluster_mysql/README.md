@@ -245,20 +245,24 @@ $ ndb_mgm -e "all report memory" #permet d'avoir l'utilisation sur les nodes
 
 ## Questions :
 
+> Quel impact aura la perte du management node ?   
+Il n'y a pas d'impact sur les autres machines parce que c'est configuré de manière à ce qu'il n'y ait pas de SPOF.
 
+> Est-ce que le management node à un rôle critique dans le fonctionnement de mon cluster ?  
+Non car il n'est là que pour configurer et monitorer les autres machines.
 
-Quel impact aura la perte du management node ? 
+> Quelle solution de secours peut-on imaginer ?  
+On pourrait configurer les databases et les nodes en tant que Maître/Esclave.
 
-Est-ce que le management node à un rôle critique dans le fonctionnement de mon cluster ? Quelle solution de secours peut-on imaginer ? 
+> Quel est l'impact de la perte de mon DataNode1 ?  
+Il n'y a pas d'impact sur les autres machines car il y a redirection des charges vers data_node2.
 
-Quel est l'impact de la perte de mon DataNode1 ?
-
-Quel est l'impact de la perte de mon SQL node 2 ?
-
+> Quel est l'impact de la perte de mon SQL node 2 ?  
+Il n'y a pas d'impact sur les autres machines car les données sont partagées entre elles dans tous les cas.
 
 
 | Evenement | Evenement attendu | Evenement obtenu |
 | --------- | ----------------- | ---------------- |
-|           |                   |                  |
-|           |                   |                  |
+| Perte de sql_node2 | Pas de pertes de données et remplacement automatique par sql_node1 | Pas de pertes de données et remplacement automatique par sql_node1 |
+| Perte de data_node1 | Redirection automatique des charges vers data_node 2 | Redirection automatique des charges vers data_node 2 |
 
